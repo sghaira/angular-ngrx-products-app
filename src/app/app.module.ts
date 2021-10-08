@@ -19,7 +19,8 @@ import { NewProductComponent } from './component/products/new-product/new-produc
 import { EditProductComponent } from './component/products/edit-product/edit-product.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { LogInComponent } from './component/log-in/log-in.component';
-import { productsReducer } from './ngrx/store/products-reducer/products.reducer';
+import { productsReducer } from './ngrx/store/reducers/products-reducer/products.reducer';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import { productsReducer } from './ngrx/store/products-reducer/products.reducer'
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

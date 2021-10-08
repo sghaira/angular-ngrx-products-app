@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { GetAllProductsAction, GetSelectedProductsAction, ProductsActionsTypes, SearchProductsAction } from 'src/app/ngrx/store/action/product-action/products.actions';
-import { ProductsState } from 'src/app/ngrx/store/products-reducer/products.reducer';
+import { ProductsState } from 'src/app/ngrx/store/reducers/products-reducer/products.reducer';
 
 @Component({
   selector: 'app-products-nav-bar',

@@ -2,7 +2,7 @@
 
 import {Action} from '@ngrx/store';
 import { Product } from 'src/app/models/product.model';
-import { ProductsActions, ProductsActionsTypes } from '../action/product-action/products.actions';
+import { ProductsActions, ProductsActionsTypes } from '../../action/product-action/products.actions';
 
 export enum ProductsStateEnum{
   LOADING= "Loading",

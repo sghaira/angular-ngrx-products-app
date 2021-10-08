@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
-import { ProductsState, ProductsStateEnum } from 'src/app/ngrx/store/products-reducer/products.reducer';
+import { ProductsState, ProductsStateEnum } from 'src/app/ngrx/store/reducers/products-reducer/products.reducer';
 
 @Component({
   selector: 'app-products',
