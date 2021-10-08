@@ -1,9 +1,8 @@
-import { ProductsActions, ProductsActionsTypes } from '../../../ngrx/store/action/products-actions/products.actions';
 import { state } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { GetAllProductsAction, GetSelectedProductsAction, SearchProductsAction } from 'src/app/ngrx/store/action/products-actions/products.actions';
+import { GetAllProductsAction, GetSelectedProductsAction, ProductsActionsTypes, SearchProductsAction } from 'src/app/ngrx/store/action/product-action/products.actions';
 import { ProductsState } from 'src/app/ngrx/store/products-reducer/products.reducer';
 
 @Component({

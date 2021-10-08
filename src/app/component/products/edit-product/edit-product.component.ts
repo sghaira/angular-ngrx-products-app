@@ -1,11 +1,13 @@
-import { UpdateProductAction } from '../../../ngrx/store/action/products-actions/products.actions';
+
+
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { EditProductAction } from 'src/app/ngrx/store/action/products-actions/products.actions';
-import { ProductsState, ProductsStateEnum } from 'src/app/ngrx/store/reducer/products-reducer/products.reducer';
+import { ProductsState, ProductsStateEnum } from 'src/app/ngrx/store/products-reducer/products.reducer';
+
 import { ProductService } from 'src/app/services/product.service';
+import { EditProductAction, UpdateProductAction } from 'src/app/ngrx/store/action/product-action/products.actions';
 
 @Component({
   selector: 'app-edit-product',

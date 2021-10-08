@@ -1,9 +1,10 @@
-import { GetAllProductsAction, GetAllProductsActionSuccess, GetSelectedProductsAction, NewProductAction, SaveProductAction } from '../../../ngrx/store/action/products-actions/products.actions';
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { ProductsState, ProductsStateEnum } from 'src/app/ngrx/store/reducer/products-reducer/products.reducer';
 import { Router } from '@angular/router';
+import { ProductsState, ProductsStateEnum } from 'src/app/ngrx/store/products-reducer/products.reducer';
+import { NewProductAction, SaveProductAction } from 'src/app/ngrx/store/action/product-action/products.actions';
 
 @Component({
   selector: 'app-new-product',

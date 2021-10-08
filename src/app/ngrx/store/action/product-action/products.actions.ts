@@ -130,19 +130,19 @@ export class SelectProductsActionError implements Action{
 
 /* Delete Products Actions*/
 
-export class DeleteProductsAction implements Action{
+export class DeleteProductAction implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.DELETE_PRODUCT;
   constructor(public payload: Product) {
   }
 }
 
-export class DeleteProductsActionSuccess implements Action{
+export class DeleteProductActionSuccess implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.DELETE_PRODUCT_SUCCESS;
   constructor(public payload: Product) {
   }
 }
 
-export class DeleteProductsActionError implements Action{
+export class DeleteProductActionError implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.DELETE_PRODUCT_ERROR;
   constructor(public payload: string) {
   }
@@ -150,13 +150,13 @@ export class DeleteProductsActionError implements Action{
 
 /* New Products Actions*/
 
-export class NewProductsAction implements Action{
+export class NewProductAction implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.NEW_PRODUCT;
   constructor(public payload: any) {
   }
 }
 
-export class NewProductsActionSuccess implements Action{
+export class NewProductActionSuccess implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.NEW_PRODUCT_SUCCESS;
   constructor(public payload: any) {
   }
@@ -170,19 +170,19 @@ export class NewProductsActionError implements Action{
 
 /* Save Products Actions*/
 
-export class SaveProductsAction implements Action{
+export class SaveProductAction implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.SAVE_PRODUCT;
   constructor(public payload: number) {
   }
 }
 
-export class SaveProductsActionSuccess implements Action{
+export class SaveProductActionSuccess implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.SAVE_PRODUCT_SUCCESS;
   constructor(public payload: Product) {
   }
 }
 
-export class SaveProductsActionError implements Action{
+export class SaveProductActionError implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.SAVE_PRODUCT_ERROR;
   constructor(public payload: string) {
   }
@@ -190,19 +190,19 @@ export class SaveProductsActionError implements Action{
 
 /* Edit Products Actions*/
 
-export class EditProductsAction implements Action{
+export class EditProductAction implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.EDIT_PRODUCT;
-  constructor(public payload: Product) {
+  constructor(public payload: number) {
   }
 }
 
-export class EditProductsActionSuccess implements Action{
+export class EditProductActionSuccess implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.EDIT_PRODUCT_SUCCESS;
   constructor(public payload: Product) {
   }
 }
 
-export class EditProductsActionError implements Action{
+export class EditProductActionError implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.EDIT_PRODUCT_ERROR;
   constructor(public payload: string) {
   }
@@ -210,19 +210,19 @@ export class EditProductsActionError implements Action{
 
 /* Update Products Actions*/
 
-export class UpdateProductsAction implements Action{
+export class UpdateProductAction implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.UPDATE_PRODUCT;
   constructor(public payload: Product) {
   }
 }
 
-export class UpdateProductsActionSuccess implements Action{
+export class UpdateProductActionSuccess implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.UPDATE_PRODUCT_SUCCESS;
   constructor(public payload: Product) {
   }
 }
 
-export class UpdateProductsActionError implements Action{
+export class UpdateProductActionError implements Action{
   type: ProductsActionsTypes = ProductsActionsTypes.UPDATE_PRODUCT_ERROR;
   constructor(public payload: string) {
   }
@@ -232,10 +232,10 @@ export type ProductsActions=
     | GetSelectedProductsAction   | GetSelectedProductsActionSuccess | GetSelectedProductsActionError
     | SearchProductsAction        | SearchProductsActionSuccess      | SearchProductsActionError
     | SelectProductsAction        | SelectProductsActionSuccess      | SelectProductsActionError
-    | DeleteProductsAction        | DeleteProductsActionSuccess      | DeleteProductsActionError
-    | NewProductsAction           | NewProductsActionSuccess         | NewProductsActionError
-    | SaveProductsAction          | SaveProductsActionSuccess        | SaveProductsActionError
-    | EditProductsAction          | EditProductsActionSuccess        | EditProductsActionError
-    | UpdateProductsAction        | UpdateProductsActionSuccess      | UpdateProductsActionError
+    | DeleteProductAction        | DeleteProductActionSuccess       | DeleteProductActionError
+    | NewProductAction           | NewProductActionSuccess          | NewProductsActionError
+    | SaveProductAction          | SaveProductActionSuccess         | SaveProductActionError
+    | EditProductAction          | EditProductActionSuccess         | EditProductActionError
+    | UpdateProductAction        | UpdateProductActionSuccess       | UpdateProductActionError
 ;
 

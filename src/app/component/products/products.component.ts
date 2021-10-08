@@ -1,8 +1,11 @@
+
+
 import { Observable } from 'rxjs';
-import { ProductsState, ProductsStateEnum } from '../../ngrx/store/reducer/products-reducer/products.reducer';
+
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
+import { ProductsState, ProductsStateEnum } from 'src/app/ngrx/store/products-reducer/products.reducer';
 
 @Component({
   selector: 'app-products',

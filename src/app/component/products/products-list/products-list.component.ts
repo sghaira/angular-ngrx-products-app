@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProductsState } from 'src/app/ngrx/store/reducer/products-reducer/products.reducer';
+import { ProductsState } from 'src/app/ngrx/store/products-reducer/products.reducer';
+
 
 @Component({
   selector: 'app-products-list',

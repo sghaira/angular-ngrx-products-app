@@ -1,10 +1,10 @@
-import { DeleteProductAction } from '../../../../ngrx/store/action/products-actions/products.actions';
+
 import { Store } from '@ngrx/store';
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
-import { ProductsState } from 'src/app/ngrx/store/reducer/products-reducer/products.reducer';
-import { SelectProductsAction } from 'src/app/ngrx/store/action/products-actions/products.actions';
+
 import { Router } from '@angular/router';
+import { DeleteProductAction, SelectProductsAction } from 'src/app/ngrx/store/action/product-action/products.actions';
 
 @Component({
   selector: 'app-product-item',

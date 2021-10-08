@@ -3,18 +3,14 @@ import {ProductService} from '../../../../services/product.service';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Observable, of} from 'rxjs';
 import {Action} from '@ngrx/store';
-import {
-  DeleteProductAction,
-  DeleteProductActionError,
-  DeleteProductActionSuccess,
-  EditProductActionError,
-  EditProductActionSuccess,
-  GetAllProductsActionError,
-  GetAllProductsActionSuccess, GetSelectedProductsActionError,
+
+import {catchError, map, mergeMap} from 'rxjs/operators';
+import { DeleteProductActionError, DeleteProductActionSuccess, EditProductActionError, EditProductActionSuccess, GetAllProductsActionError,
+  GetAllProductsActionSuccess,
+  GetSelectedProductsActionError,
   GetSelectedProductsActionSuccess,
   NewProductActionSuccess,
-  ProductsActions,
-  ProductsActionsTypes,
+  ProductsActions, ProductsActionsTypes,
   SaveProductActionError,
   SaveProductActionSuccess,
   SearchProductsActionError,
@@ -22,9 +18,7 @@ import {
   SelectProductsActionError,
   SelectProductsActionSuccess,
   UpdateProductActionError,
-  UpdateProductActionSuccess
-} from '../../action/products-actions/products.actions';
-import {catchError, map, mergeMap} from 'rxjs/operators';
+  UpdateProductActionSuccess} from '../../action/product-action/products.actions';
 
 @Injectable()
 export class ProductsEffects {

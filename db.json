@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "name": "test",
+      "name": "test1",
       "price": 600,
       "quantity": 12,
       "selected": true,
@@ -25,10 +25,11 @@
       "available": true
     },
     {
-      "name": "gfh",
-      "price": 4,
-      "quantity": 4,
+      "name": "test2",
+      "price": 200,
+      "quantity": 12,
       "selected": true,
+      "available": true,
       "id": 4
     }
   ]
