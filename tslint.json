@@ -8,7 +8,10 @@
       "options": [
         "parameters",
         "statements"
-      ]
+      ],
+
+        "@typescript-eslint/no-explicit-any": "off"
+
     },
     "array-type": false,
     "arrow-return-shorthand": true,
@@ -65,8 +68,8 @@
       "as-needed"
     ],
     "quotemark": [
-      true,
-      "single"
+      false
+     // "single"
     ],
     "semicolon": {
       "options": [
@@ -83,7 +86,7 @@
       }
     },
     "typedef": [
-      true,
+      false,
       "call-signature"
     ],
     "typedef-whitespace": {
@@ -112,7 +115,9 @@
       ]
     },
     "whitespace": {
+
       "options": [
+
         "check-branch",
         "check-decl",
         "check-operator",

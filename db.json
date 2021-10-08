@@ -1,7 +1,35 @@
 {
   "products": [
-    {"id": 1,"name": "Computer","price": 60000,"quantity": 12,"selected": true,"available": true},
-    {"id": 2,"name": "Printer","price": 1200,"quantity": 10,"selected": true,"available": false},
-    {"id": 3,"name": "Smartphone","price": 2000,"quantity": 32,"selected": false,"available": true}
+    {
+      "id": 1,
+      "name": "test",
+      "price": 600,
+      "quantity": 12,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Printer",
+      "price": 1200,
+      "quantity": 10,
+      "selected": false,
+      "available": false
+    },
+    {
+      "id": 3,
+      "name": "gffd",
+      "price": 14,
+      "quantity": 4,
+      "selected": true,
+      "available": true
+    },
+    {
+      "name": "gfh",
+      "price": 4,
+      "quantity": 4,
+      "selected": true,
+      "id": 4
+    }
   ]
 }
