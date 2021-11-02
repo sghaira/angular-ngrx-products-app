@@ -1,0 +1,73 @@
+<div class="body">
+  <h2 class="text-center">Sign Up</h2>
+  <form #f="ngForm" class="example-form" (ngSubmit)="signUp(f)">
+    <!--User name-->
+    <input
+      ngModel
+      name="name"
+      type="text"
+      class="form-control"
+      placeholder="Your name"
+      required
+      #name="ngModel">
+      <div class="alert alert-danger" *ngIf="name.invalid&&name.touched">Name is required</div>
+      <!--Email-->
+    <input
+      ngModel
+      name="email"
+      type="email"
+      class="form-control"
+      placeholder="Email"
+      required
+      email
+      #email="ngModel">
+      <div class="alert alert-danger"*ngIf="email.touched&&email.errors?.required">Email is required</div>
+      <div class="alert alert-danger" *ngIf="email.touched&&email.errors?.email">your input doesn't match email format</div>
+
+      <!--Password-->
+    <input
+      ngModel
+      name="password"
+      type="password"
+      class="form-control"
+      placeholder="Password"
+      required
+      minlength="6"
+      #password="ngModel">
+      <div class="alert alert-danger"*ngIf="password.touched&&password.errors?.required">Password is required</div>
+      <div class="alert alert-danger" *ngIf="password.touched&&password.errors?.minlength">Password should be at least 6 characters</div>
+      <!--Password Confirme-->
+    <input
+      ngModel
+      name="passwordConfirm"
+      type="password"
+      class="form-control"
+      placeholder="Confirm Password"
+      required
+      #passwordConfirm="ngModel">
+      <div class="alert alert-danger" *ngIf="passwordConfirm.invalid&&passwordConfirm.touched&&passwordConfirm.errors?.required">Password Confirm is required</div>
+      <div class="alert alert-danger" *ngIf="passwordConfirm.value!==password.value&&passwordConfirm.touched">password Not equal</div>
+      <!--Adresse-->
+    <input
+      ngModel
+      name="adresse"
+      type="text"
+      class="form-control"
+      placeholder="Adresse"
+      required
+      #adresse="ngModel">
+      <div class="alert alert-danger" *ngIf="adresse.invalid&&adresse.touched">Adresse is required</div>
+
+
+      <!--Button create account-->
+    <button class="btn btn-primary mb-2 ml-3"
+     [disabled]="f.invalid || passwordConfirm.value!==password.value">Create Account</button>
+     <a [routerLink]="['/']" class="btn btn-success ml-4 ">Cancel</a>
+  </form>
+  <p>
+    <span>Already have an account?&nbsp;</span>
+    <a [routerLink]="['/login']">Log in!</a>
+  </p><br>
+  <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+</div>
+

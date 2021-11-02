@@ -1,0 +1,31 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.example-full-width {
+  width: 100%;
+}
+form
+{
+  padding: 20px;
+  background-color: #e6e4e4;
+}
+.body{
+  padding-right: auto;
+  padding-left: 30%;
+  scroll-padding-top: 1rem;
+}
+.text-center{
+  padding-right:55%;
+  
+}
+.btn-primary{
+  padding:center;
+}
+.form-control{
+  margin-top:10px;
+}
+.btn-primary{
+  margin-top:10px;
+}

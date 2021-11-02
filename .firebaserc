@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "market-55662": {
+      "hosting": {
+        "products-app-ngrx": [
+          "market-55662"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "market-55662"
+  }
+}

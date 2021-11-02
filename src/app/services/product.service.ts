@@ -10,7 +10,7 @@ export class ProductService {
   constructor(private http: HttpClient) {
   }
   public getProducts(): Observable<Product[]>{
-    const host = Math.random() > 0.2 ? environment.host : environment.unreachableHost;
+    const host = environment.host;
     // let host=environment.host;
     return this.http.get<Product[]>(host + '/products');
     // return throwError("Not Implemented yet");

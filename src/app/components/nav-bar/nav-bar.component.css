@@ -1,0 +1,27 @@
+
+.nabbar{
+  justify-content: space-between;
+
+}
+.li.row{
+  padding-right: 3rem;
+
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 2rem;
+  padding-left: 0.5rem;
+
+}
+.row{
+  padding-left:30rem;
+
+}
+
+.language-button {
+    min-width: 64px;
+    height: 40px;
+
+    @include media-breakpoint('xs') {
+        height: 56px;
+    }
+}

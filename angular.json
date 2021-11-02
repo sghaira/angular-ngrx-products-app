@@ -130,6 +130,16 @@
               "devServerTarget": "products-app-ngrx:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "products-app-ngrx:build:production",
+            "firebaseProject": "market-55662",
+            "firebaseHostingSite": "market-55662"
+          }
         }
       }
     }
