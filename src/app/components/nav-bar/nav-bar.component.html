@@ -1,53 +1,97 @@
 <div class="container mb-4 mt-4">
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand"  routerLink="/">App</a>
-    <button (click)="toggleNavBar()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" routerLink="/">App</a>
+    <button
+      (click)="toggleNavBar()"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" [class.show]="isOpen" id="navbarSupportedContent">
+    <div
+      class="collapse navbar-collapse"
+      [class.show]="isOpen"
+      id="navbarSupportedContent"
+    >
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item ">
-          <a class="nav-link " routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home
-            <span class=sr-only>(current)</span>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home
+            <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item"*ngIf="isUser">
-          <a class="nav-link" routerLink="/products" routerLinkActive="active">Product</a>
+        <li class="nav-item" *ngIf="isUser">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active"
+            >Product</a
+          >
         </li>
       </ul>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item"*ngIf="!isUser">
-      <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-    </li>
-    <li class="nav-item" *ngIf="!isUser">
-      <a class="nav-link" routerLink="/signup" routerLinkActive="active">Signup</a>
-    </li>
-    <li class="nav-item nav-justified"*ngIf="isUser">
-      <button class="btn btn-danger"(click)="logout()">Logout</button>
+    </div>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngIf="!isUser">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active"
+          >Login</a
+        >
       </li>
-  </ul>
-  <div *ngIf="languages">
-    <button mat-button fxHide fxShow.gt-xs class="language-button" [matMenuTriggerFor]="languageMenu">
+      <li class="nav-item" *ngIf="!isUser">
+        <a class="nav-link" routerLink="/signup" routerLinkActive="active"
+          >Signup</a
+        >
+      </li>
+      <li class="nav-item nav-justified" *ngIf="isUser">
+        <button class="btn btn-danger" (click)="logout()">Logout</button>
+      </li>
+    </ul>
+    <div class="nav-lang" *ngIf="languages">
+      <button
+        mat-button
+        fxHide
+        fxShow.gt-xs
+        class="language-button"
+        [matMenuTriggerFor]="languageMenu"
+      >
         <div fxLayout="row" fxLayoutAlign="center center">
-            <img class="flag mr-8" [src]="'assets/icons/flags/'+selectedLanguage.flag+'.png'">
-            <span class="iso text-uppercase">{{selectedLanguage.id}}</span>
+          <img
+            class="flag mr-8"
+            [src]="'assets/icons/flags/' + selectedLanguage.flag + '.png'"
+          />
+          <span class="iso text-uppercase">{{ selectedLanguage.id }}</span>
         </div>
-    </button>
-    <mat-menu #languageMenu="matMenu" [overlapTrigger]="false">
-        <button mat-menu-item *ngFor="let lang of languages" (click)="setLanguage(lang)">
-            <span fxLayout="row" fxLayoutAlign="start center">
-                <img class="flag mr-16" [src]="'assets/icons/flags/'+lang.flag+'.png'">
-                <span class="iso">{{lang.title}}</span>
-            </span>
+      </button>
+      <mat-menu
+        class="nav-lang-menu"
+        #languageMenu="matMenu"
+        [overlapTrigger]="false"
+      >
+        <button
+          class="nav-lang-menu-item"
+          mat-menu-item
+          *ngFor="let lang of languages"
+          (click)="setLanguage(lang)"
+        >
+          <span fxLayout="row" fxLayoutAlign="start center">
+            <img
+              class="flag mr-16"
+              [src]="'assets/icons/flags/' + lang.flag + '.png'"
+            />
+            <span class="iso">{{ lang.title }}</span>
+          </span>
         </button>
-
-    </mat-menu><p>{{'Choose_language'|translate}}</p>
+      </mat-menu>
+    </div>
+  </nav>
 </div>
-</nav>
-</div>
-
- <!--  <div *ngIf="languages">
+<p>{{ "Choose_language" | translate }}</p>
+<!--  <div *ngIf="languages">
       <button mat-button fxHide fxShow.gt-xs class="language-button" [matMenuTriggerFor]="languageMenu">
           <div fxLayout="row" fxLayoutAlign="center center">
               <img class="flag mr-8" [src]="'assets/icons/flags/'+selectedLanguage.flag+'.png'">
@@ -64,7 +108,3 @@
 
       </mat-menu><p>{{'Choose_language'|translate}}</p>
   </div>-->
-
-
-
-

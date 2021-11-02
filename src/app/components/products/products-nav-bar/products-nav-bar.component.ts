@@ -26,16 +26,15 @@ readonly ProductsActionsTypes = ProductsActionsTypes;
    this.store.dispatch( new GetAllProductsAction({}));
  }
 
- // tslint:disable-next-line:typedef
+
  onGetSelectedProducts(){
   this.store.dispatch( new GetSelectedProductsAction({}));
  }
 
- // tslint:disable-next-line:typedef
+
  onSearch(dataForm: any){
   this.store.dispatch( new SearchProductsAction(dataForm.keyword));
  }
- // tslint:disable-next-line:typedef
  onNewProducts(){
   this.router.navigateByUrl("/new-product");
  }

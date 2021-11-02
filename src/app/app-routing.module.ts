@@ -18,8 +18,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent, data: {index: 0} },
   { path: 'login', component: LoginComponent, canActivate: [NotAuthGuard], data: {index: 1} },
   { path: 'signup', component: SignupComponent, canActivate: [NotAuthGuard], data: {index: 2} },
-  { path: 'new-product',component:NewProductComponent, canActivate: [NotAuthGuard], data: {index:3}},
-  {path: 'edit-product/:id',component:EditProductComponent, canActivate: [NotAuthGuard], data: {index:4}},
+  { path: 'new-product',component:NewProductComponent,},
+  {path: 'edit-product/:id',component:EditProductComponent,},
   {path: 'products',component:ProductsComponent, data: {index:5}},
   { path: '**', component: NotFoundComponent },
 ];

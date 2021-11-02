@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageInterceptor } from './components/interceptors/language.interceptor';
 
 import { NgModule } from '@angular/core';
@@ -28,6 +29,7 @@ import { ProductsNavBarComponent } from './components/products/products-nav-bar/
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -49,9 +51,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     SignupComponent,
     NotFoundComponent,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+
   ],
   imports: [
+    BrowserAnimationsModule,
     CommonModule,
     BrowserModule,
     AppRoutingModule,
@@ -74,6 +78,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       appId: "1:537016441696:web:f7169a0343a0b353335c05",
       measurementId: "G-G8LCCVLQ96"
     },),
+    MatIconModule,
     // FirestoreSettignsToken,
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, //Auth FireStore

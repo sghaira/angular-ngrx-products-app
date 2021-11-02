@@ -1,11 +1,12 @@
 import { trigger, transition, group, query, style, animate } from '@angular/animations';
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [
+ /* animations: [
     trigger('router', [
       transition('0 => 1, 0 => 2, 0 => 3, 0 => 4, 1 => 0, 1 => 2, 1 => 3, 1 => 4, 2 => 0, 2 => 1, 2 => 3, 2 => 4, 3 => 0, 3 => 1, 3 => 2, 3 => 4, 4 => 0, 4 => 1, 4 => 2, 4 => 3', [
         group([
@@ -28,9 +29,11 @@ import { Component } from '@angular/core';
         ])
       ])
     ])
-  ]
+  ]*/
 })
 export class AppComponent {
-  title = 'products-app-ngrx';
-
+  constructor(private translateService: TranslateService){
+    this.translateService.setDefaultLang('en')
+    this.translateService.use(localStorage.getItem('lang')||'en')
+  }
 }

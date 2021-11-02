@@ -46,6 +46,7 @@ export class NavBarComponent implements OnInit {
 
       if (lang) {
           this.translateService.use(lang);
+
       }
 
       this.selectedLanguage = this.languages.find(x => x.id.toString().toLowerCase() ==
