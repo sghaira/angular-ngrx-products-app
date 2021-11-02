@@ -8,6 +8,7 @@ import { EditProductComponent } from './components/products/edit-product/edit-pr
 import { NewProductComponent } from './components/products/new-product/new-product.component';
 import { ProductsComponent } from './components/products/products.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthGuard } from './services/guards/auth.guard';
 import { NotAuthGuard } from './services/guards/not-auth.guard';
 
 
@@ -18,9 +19,9 @@ const routes: Routes = [
   { path: '', component: HomeComponent, data: {index: 0} },
   { path: 'login', component: LoginComponent, canActivate: [NotAuthGuard], data: {index: 1} },
   { path: 'signup', component: SignupComponent, canActivate: [NotAuthGuard], data: {index: 2} },
-  { path: 'new-product',component:NewProductComponent,},
-  {path: 'edit-product/:id',component:EditProductComponent,},
-  {path: 'products',component:ProductsComponent, data: {index:5}},
+  { path: 'new-product',component:NewProductComponent,canActivate: [AuthGuard], },
+  {path: 'edit-product/:id',component:EditProductComponent,canActivate: [AuthGuard], },
+  {path: 'products',component:ProductsComponent,canActivate: [AuthGuard],  },
   { path: '**', component: NotFoundComponent },
 ];
 
