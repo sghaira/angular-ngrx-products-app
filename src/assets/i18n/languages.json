@@ -1,0 +1,22 @@
+[
+    {
+        "id": "en",
+        "title": "English",
+        "flag": "us"
+    },
+    {
+        "id": "fr",
+        "title": "Frensh",
+        "flag": "fr"
+    },
+    {
+        "id": "de",
+        "title": "German",
+        "flag": "ge"
+    },
+    {
+      "id": "ar",
+      "title": "Arabic",
+      "flag": ""
+  }
+]

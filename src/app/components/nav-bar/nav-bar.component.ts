@@ -1,26 +1,28 @@
+import { TranslationLoaderService } from 'src/app/services/translation-loader.service';
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-//import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
-//import { Languages } from 'prismjs';
-//import { TranslationLoaderService } from 'src/app/services/translation-loader.service';
+import { Languages } from 'prismjs';
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  //languages: Languages[];
+  languages: Languages[];
   selectedLanguage: any;
   lang
   isOpen :boolean = false;
   isUser :boolean = false;
   isAdmin:boolean = false;
   constructor(private as:AuthService,
-              private us:UserService,) { }
-          //    private translateService: TranslateService,
-            //  private fuseTranslateService: TranslationLoaderService,)
+              private us:UserService,
+              private translateService: TranslateService,
+              private fuseTranslateService: TranslationLoaderService,) { }
 
   ngOnInit() {
     this.as.user.subscribe(user=>{
@@ -38,7 +40,7 @@ export class NavBarComponent implements OnInit {
         this.as.userId=''
       }
     })
-  /*  this.fuseTranslateService.getLangList().subscribe(data => {
+    this.fuseTranslateService.getLangList().subscribe(data => {
       this.languages = data
       const lang = localStorage.getItem('lang') ?? this.translateService.getBrowserLang();
 
@@ -50,7 +52,7 @@ export class NavBarComponent implements OnInit {
           lang.toLowerCase())
 
   });
-    //this.lang=localStorage.getItem('lang')||'en';*/
+    this.lang=localStorage.getItem('lang')||'en';
   }
 
   toggleNavBar(){
@@ -60,7 +62,7 @@ export class NavBarComponent implements OnInit {
       this.as.logout()
   }
 
-  /*changeLanguage(event){
+  changeLanguage(event){
    // this.translateService.setDefaultLang('en')
     this.translateService.use(event.target.value)
   }
@@ -75,5 +77,5 @@ export class NavBarComponent implements OnInit {
    // window.location.reload();
 
 
-}*/
+}
 }

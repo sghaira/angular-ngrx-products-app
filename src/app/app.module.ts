@@ -1,8 +1,9 @@
+import { LanguageInterceptor } from './components/interceptors/language.interceptor';
 
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -26,7 +27,14 @@ import { StoreModule } from '@ngrx/store';
 import { ProductsNavBarComponent } from './components/products/products-nav-bar/products-nav-bar.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 @NgModule({
   declarations: [
 
@@ -70,8 +78,21 @@ import { HomeComponent } from './components/home/home.component';
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, //Auth FireStore
     AngularFirestoreModule,//Storage firestore
+       ////// material
+       MatMenuModule,
+       //////////translate
+       TranslateModule.forRoot({
+         defaultLanguage: 'en',
+         loader: {
+             provide: TranslateLoader,
+             useFactory: HttpLoaderFactory,
+             deps: [HttpClient]
+         }
+     })
+
   ],
-  providers: [AuthService],
+  providers: [AuthService,
+    {provide:HTTP_INTERCEPTORS,useClass:LanguageInterceptor,multi:true, },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
